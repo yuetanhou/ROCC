@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Republic of Cyber China Internet Republic</title>
+    <style>
+        /* 全局重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 基础样式 */
+        body {
+            background-color: #fff;
+            font-family: "FangSong", "仿宋", serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 容器类 */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 顶部导航栏 */
+        .header {
+            background-color: #fff;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 15px 0;
+        }
+
+        .header__wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .header__left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header__emblem {
+            width: 50px;
+            height: 50px;
+            margin-right: 12px;
+            transition: transform 0.2s ease;
+        }
+
+        .header__emblem:hover {
+            transform: scale(1.05);
+        }
+
+        .header__site-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header__full-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #d00;
+            line-height: 1.2;
+        }
+
+        .header__domain {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.2;
+        }
+
+        .header__right {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .header__lang-link {
+            color: #333;
+            text-decoration: none;
+            margin: 0 8px;
+            transition: color 0.2s ease;
+        }
+
+        .header__lang-link:hover {
+            color: #d00;
+            text-decoration: underline;
+        }
+
+        .header__divider {
+            color: #ccc;
+            margin: 0 5px;
+        }
+
+        /*中华网络共和国人民代表大会组织法内容*/
+        .main-title{/*标题*/
+            text-align: center;
+            font-size: 30px;
+            margin-top: 20px;
+            clear: both;
+        }
+
+        .history{
+            text-align: center;
+            color: navy;
+            font-size: 20px;
+            margin-top: 10px;
+            clear: both;
+        }
+
+        .table-of-contents-title{
+            display: block;
+            font-size: 20px;
+            margin-top: 7px;
+            margin: 7px auto 0;
+            clear: both;
+            text-align: center;
+        }
+        
+        .table-of-contents{
+            margin-left: 60px;
+            font-size: 20px;
+            margin-top: 7px;
+            clear: both;
+        }
+    
+        /* 分割线 */
+        .divider {
+            border: none;
+            height: 1px;
+            background-color: #ccc;
+            margin: 20px auto;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .header__full-name {
+                font-size: 18px;
+            }
+
+            .map-section__title,
+            .legal-section__title {
+                font-size: 20px;
+            }
+
+            .map-section__desc {
+                font-size: 16px;
+            }
+
+            .section__title {
+                font-size: 18px;
+            }
+
+            .section__text {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header__wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header__right {
+                margin-top: 10px;
+            }
+
+            .main__wrapper {
+                gap: 20px;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="container header__wrapper">
+            <!-- 左侧：国徽 + 名称 -->
+            <div class="header__left">
+                <a href="https://s41.ax1x.com/2026/02/18/pZOXeR1.png" target="_blank">
+                    <img src="https://s41.ax1x.com/2026/02/18/pZOXeR1.png" alt="Emblem of the Republic of Cyber China" class="header__emblem">
+                </a>
+                <div class="header__site-info">
+                    <span class="header__full-name">Central People's Government of the Republic of Cyber China</span>
+                    <span class="header__domain">www.English.rocc.gov.cc</span>
+                </div>
+            </div>
+            <!-- 右侧：语言切换 -->
+            <div class="header__right">
+                <a href="ROCC Organic Law of the National People's Congress zh-CN.html" class="header__lang-link" data-lang="zh-CN">简体</a>
+                <a href="ROCC Organic Law of the National People's Congress zh-TW.html" class="header__lang-link" data-lang="zh-TW">繁體</a>
+                <a href="ROCC Organic Law of the National People's Congress en.html" class="header__lang-link" data-lang="en">EN</a>
+                <span class="header__divider">|</span>
+            </div>
+        </div>
+    <script>
+        // 语言切换逻辑
+        document.querySelectorAll('.header__lang-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const langMap = {
+                    'zh-CN': '简体中文',
+                    'zh-TW': '繁体中文',
+                    'en': '英文'
+                };
+                const lang = this.getAttribute('data-lang');
+                alert(`即将切换到 ${langMap[lang] || lang} 版本`);
+        });
+    });
+    </script>
+    </header>
+    <h1 class="main-title">Organic Law of the National People's Congress of the Cyber Republic of China</h1>
+    <p class="history">(Adopted by the First National People's Congress on February 28, 2026; signed by the President of the Cyber Republic of China on February 28, 2026, and promulgated by the Office of the President of the Cyber Republic of China)</p>
+    <p class="table-of-contents">Article 1: In order to implement socialism with Houkuo characteristics and uphold the nature of the state as being under the rule of the people, this law is formulated in accordance with the Constitution.<br>Article 2: The People's Congresses are divided into two levels: the National People's Congress and the municipal-level People's Congresses.<br>Article 3: Each level of the People's Congress manages the administrative areas under its jurisdiction, and based on the specific conditions of the subordinate administrative areas, coordinates independently and formulates relevant laws and regulations, serving the people wholeheartedly.<br>Article 4: Each level of the People's Congress democratically elects representatives of the People's Congress for its administrative area, and periodically convenes meetings integrated with the specific situation. Representatives at each level participate in the corresponding People's Congress.<br>Article 5: The People's Congress implements the system of democratic centralism. When a representative submits a proposal, it is voted on by all representatives. If the votes are in majority, the proposal passes; if tied, it is decided by the State Chairman; if it does not reach a majority, the proposal fails.<br>Article 6: Governments at all levels and other state organs within the subordinate administrative areas shall cooperate with the resolutions of the People's Congress and report their work to all representatives when the People's Congress convenes. The process should be fair and transparent.<br>Article 7: This law shall come into force from the date of promulgation.</p>
+<hr class="divider">
+<b class="table-of-contents">Relevant Documents</b>
+    <a href=""target="_blank">
+        <b class="table-of-contents">Chairman Order No. 2 of the Chinese Internet Republic</b>
+    </a>
+    <br>
+    <b class="table-of-contents">Developer Contact Information: houkuo201139 (WeChat ID)</b>
+</body>
+</html>

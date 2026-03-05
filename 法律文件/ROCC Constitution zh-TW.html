@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中華網路共和國憲法</title>
+    <style>
+        /* 全局重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 基础样式 */
+        body {
+            background-color: #fff;
+            font-family: "FangSong", "仿宋", serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 容器类 */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 顶部导航栏 */
+        .header {
+            background-color: #fff;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 15px 0;
+        }
+
+        .header__wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .header__left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header__emblem {
+            width: 50px;
+            height: 50px;
+            margin-right: 12px;
+            transition: transform 0.2s ease;
+        }
+
+        .header__emblem:hover {
+            transform: scale(1.05);
+        }
+
+        .header__site-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header__full-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #d00;
+            line-height: 1.2;
+        }
+
+        .header__domain {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.2;
+        }
+
+        .header__right {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .header__lang-link {
+            color: #333;
+            text-decoration: none;
+            margin: 0 8px;
+            transition: color 0.2s ease;
+        }
+
+        .header__lang-link:hover {
+            color: #d00;
+            text-decoration: underline;
+        }
+
+        .header__divider {
+            color: #ccc;
+            margin: 0 5px;
+        }
+
+        /*中华网络共和国宪法内容*/
+        .main-title{/*标题*/
+            text-align: center;
+            font-size: 30px;
+            margin-top: 20px;
+            clear: both;
+        }
+
+        .history{
+            text-align: center;
+            color: navy;
+            font-size: 20px;
+            margin-top: 10px;
+            clear: both;
+        }
+
+        .table-of-contents-title{
+            display: block;
+            font-size: 20px;
+            margin-top: 7px;
+            margin: 7px auto 0;
+            clear: both;
+            text-align: center;
+        }
+        
+        .table-of-contents{
+            margin-left: 60px;
+            font-size: 20px;
+            margin-top: 7px;
+            clear: both;
+        }
+
+        /* 分割线 */
+        .divider {
+            border: none;
+            height: 1px;
+            background-color: #ccc;
+            margin: 20px auto;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .header__full-name {
+                font-size: 18px;
+            }
+
+            .map-section__title,
+            .legal-section__title {
+                font-size: 20px;
+            }
+
+            .map-section__desc {
+                font-size: 16px;
+            }
+
+            .section__title {
+                font-size: 18px;
+            }
+
+            .section__text {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header__wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header__right {
+                margin-top: 10px;
+            }
+
+            .main__wrapper {
+                gap: 20px;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="container header__wrapper">
+            <!-- 左侧：国徽 + 名称 -->
+            <div class="header__left">
+                <a href="https://s41.ax1x.com/2026/02/18/pZOXeR1.png" target="_blank">
+                    <img src="https://s41.ax1x.com/2026/02/18/pZOXeR1.png" alt="中华网络共和国国徽" class="header__emblem">
+                </a>
+                <div class="header__site-info">
+                    <span class="header__full-name">中华网络共和国中央人民政府</span>
+                    <span class="header__domain">www.big5.rocc.gov.cc</span>
+                </div>
+            </div>
+            <!-- 右侧：语言切换 -->
+            <div class="header__right">
+                <a href="ROCC Constitution zh-CN.html" class="header__lang-link" data-lang="zh-CN">简体</a>
+                <a href="ROCC Constitution zh-TW.html" class="header__lang-link" data-lang="zh-TW">繁體</a>
+                <a href="ROCC Constitution en.html" class="header__lang-link" data-lang="en">EN</a>
+                <span class="header__divider">|</span>
+            </div>
+        </div>
+    <script>
+        // 语言切换逻辑
+        document.querySelectorAll('.header__lang-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const langMap = {
+                    'zh-CN': '简体中文',
+                    'zh-TW': '繁体中文',
+                    'en': '英文'
+                };
+                const lang = this.getAttribute('data-lang');
+                alert(`即将切换到 ${langMap[lang] || lang} 版本`);
+        });
+    });
+    </script>
+    </header>
+    <h1 class="main-title">中華網路共和國憲法</h1>
+    <p class="history">（2025年12月6日第一屆全國人民代表大會通過　2025年12月14日中華網路共和國主席簽署主席令<br>中華網路共和國主席辦公室公布施行 根據2026年2月26日第二屆全國人民代表大會《中華網路共和國憲法修正案》修正）</p>
+    <b class="table-of-contents-title">目錄</b>
+    <div class="table-of-contents">
+    <p>序言<br>第一章 總則<br>第二章 公民的權力與義務<br>第三章 國家機構<br>第四章 國旗國歌、國徽、首都</p>
+    </div>
+    <b class="table-of-contents-title">第一章 總則</b>
+    <div class="table-of-contents">第一條 中華網絡共和國賦予侯闊特色社會主義為民治民享民主共和國<br>第二條 中華網絡共和國的主權屬於全體人民</div>
+    <b class="table-of-contents-title">第二章 公民的權力與義務</b>
+    <div class="table-of-contents">第三條 凡是加入中華網絡共和國存檔的人都是中華網絡共和國公民<br>第四條 中華網絡共和國公民在法律面前一律平等<br><span style="margin-left: 3.5em;">國家尊重和保障人權</span><br><span style="margin-left: 3.5em;">任何公民享有憲法和法律規定的權利，同時必須履行義務</span><br></div>
+    <b class="table-of-contents-title">第三章 國家機構</b>
+    <div class="table-of-contents">第四條 中華網絡共和國全國人民代表大會是最高國家權力機關。它的常設機關是全國人民代表大會<br>第五條 全國人民代表大會和全國人民代表大會常務委員會依法依規行使國家立法權和選舉權，選舉出中華網絡共和國主席、中央軍委主席、國務院總理<br>第六條 中華網絡共和國國務院，即中央人民政府，是最高國家權力機關的執行機關，是國家最高行政機關<br>第七條 中央軍委主席對全國人民代表大會、華人全國人民代表大會和全國人民代表大會常務委員會負責</div>
+    <b class="table-of-contents-title">第四章 國旗國歌、國徽、首都</b>
+    <div class="table-of-contents">第八條 中華網絡共和國的國旗是亞字國旗<br>第九條 中華網絡共和國國徽，中間是我的世界草方塊，左側環繞著的是五顆五角星<br>第十條 中華網絡共和國的首都是侯主席市</div>
+    <hr class="divider">
+    <b class="table-of-contents">相關文件</b>
+    <a href="Chairman Order No. 1 of the Chinese Cyber Republic zh-TW.html"target="_blank">
+        <b class="table-of-contents">中華網路共和國第一號主席令</b>
+    </a>
+    <br>
+    <b class="table-of-contents">開發人員聯絡方式：houkuo201139（Wechat ID）</b>
+</body>
+</html>

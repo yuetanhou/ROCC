@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中华网络共和国人民代表大会组织法</title>
+    <style>
+        /* 全局重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 基础样式 */
+        body {
+            background-color: #fff;
+            font-family: "FangSong", "仿宋", serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 容器类 */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 顶部导航栏 */
+        .header {
+            background-color: #fff;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 15px 0;
+        }
+
+        .header__wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .header__left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header__emblem {
+            width: 50px;
+            height: 50px;
+            margin-right: 12px;
+            transition: transform 0.2s ease;
+        }
+
+        .header__emblem:hover {
+            transform: scale(1.05);
+        }
+
+        .header__site-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header__full-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #d00;
+            line-height: 1.2;
+        }
+
+        .header__domain {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.2;
+        }
+
+        .header__right {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .header__lang-link {
+            color: #333;
+            text-decoration: none;
+            margin: 0 8px;
+            transition: color 0.2s ease;
+        }
+
+        .header__lang-link:hover {
+            color: #d00;
+            text-decoration: underline;
+        }
+
+        .header__divider {
+            color: #ccc;
+            margin: 0 5px;
+        }
+
+        /*中华网络共和国人民代表大会组织法内容*/
+        .main-title{/*标题*/
+            text-align: center;
+            font-size: 30px;
+            margin-top: 20px;
+            clear: both;
+        }
+
+        .history{
+            text-align: center;
+            color: navy;
+            font-size: 20px;
+            margin-top: 10px;
+            clear: both;
+        }
+
+        .table-of-contents-title{
+            display: block;
+            font-size: 20px;
+            margin-top: 7px;
+            margin: 7px auto 0;
+            clear: both;
+            text-align: center;
+        }
+        
+        .table-of-contents{
+            margin-left: 60px;
+            font-size: 20px;
+            margin-top: 7px;
+            clear: both;
+        }
+
+        /* 分割线 */
+        .divider {
+            border: none;
+            height: 1px;
+            background-color: #ccc;
+            margin: 20px auto;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .header__full-name {
+                font-size: 18px;
+            }
+
+            .map-section__title,
+            .legal-section__title {
+                font-size: 20px;
+            }
+
+            .map-section__desc {
+                font-size: 16px;
+            }
+
+            .section__title {
+                font-size: 18px;
+            }
+
+            .section__text {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header__wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header__right {
+                margin-top: 10px;
+            }
+
+            .main__wrapper {
+                gap: 20px;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="container header__wrapper">
+            <!-- 左侧：国徽 + 名称 -->
+            <div class="header__left">
+                <a href="https://s41.ax1x.com/2026/02/18/pZOXeR1.png" target="_blank">
+                    <img src="https://s41.ax1x.com/2026/02/18/pZOXeR1.png" alt="中华网络共和国国徽" class="header__emblem">
+                </a>
+                <div class="header__site-info">
+                    <span class="header__full-name">中华网络共和国中央人民政府</span>
+                    <span class="header__domain">www.rocc.gov.cc</span>
+                </div>
+            </div>
+            <!-- 右侧：语言切换 -->
+            <div class="header__right">
+                <a href="ROCC Organic Law of the National People's Congress zh-CN.html" class="header__lang-link" data-lang="zh-CN">简体</a>
+                <a href="ROCC Organic Law of the National People's Congress zh-TW.html" class="header__lang-link" data-lang="zh-TW">繁體</a>
+                <a href="ROCC Organic Law of the National People's Congress en.html" class="header__lang-link" data-lang="en">EN</a>
+                <span class="header__divider">|</span>
+            </div>
+        </div>
+    <script>
+        // 语言切换逻辑
+        document.querySelectorAll('.header__lang-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const langMap = {
+                    'zh-CN': '简体中文',
+                    'zh-TW': '繁体中文',
+                    'en': '英文'
+                };
+                const lang = this.getAttribute('data-lang');
+                alert(`即将切换到 ${langMap[lang] || lang} 版本`);
+        });
+    });
+    </script>
+    </header>
+    <h1 class="main-title">中华网络共和国人民代表大会组织法</h1>
+    <p class="history">（2026年2月28日第一届全国人民代表大会通过　2026年2月28日中华网络共和国主席签署主席令，中华网络共和国主席办公室公布施行）</p>
+    <p class="table-of-contents">第一条 为贯彻侯阔特色社会主义，贯彻人民当家作主的国家性质，依据宪法，制定本法<br>第二条 人民代表大会共分有两级，全国人民代表大会和市级人民代表大会<br>第三条 各级人民代表大会各自管理下辖行政区，依据下辖行政区的具体情况自行协调，制定相关法律法规，全心全意为人民服务<br>第四条 各级人民代表大会在下辖行政区中民主选举本行政区的人大代表，不定期结合具体其概况召开大会，各级人大代表参加相应的人民代表大会<br>第五条 人民代表大会贯彻民主集中制度，人大代表提出提案，由全体人大代表表决后，若票数过半数，则提案通过；若平票，则由国家主席裁决；若票数未过半，则提案不通过<br>第六条 各级人民政府及其他下辖行政区内的国家机关应配合人民代表大会的决议，在人民代表大会召开之时相全体人大代表述职，应公正公开<br>第七条 本法自公布之日起施行</p>
+    <hr class="divider">
+    <b class="table-of-contents">相关文件</b>
+    <a href=""target="_blank">
+        <b class="table-of-contents">中华网络共和国第二号主席令</b>
+    </a>
+    <br>
+    <b class="table-of-contents">开发人员联系方式：houkuo201139（微信号）</b>
+</body>
+</html>

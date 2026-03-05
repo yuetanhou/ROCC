@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中华共产党</title>
+    <link rel="icon"href="https://s41.ax1x.com/2026/03/04/pe9sjSS.png"type="image/png">
+    <style>
+        /* 全局重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 基础样式 */
+        body {
+            background-color: #fff;
+            font-family: "FangSong", "仿宋", serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 容器类 */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 顶部导航栏 */
+        .header {
+            background-color: #fff;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 15px 0;
+        }
+
+        .header__wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .header__left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header__emblem {
+            width: 50px;
+            height: 50px;
+            margin-right: 12px;
+            transition: transform 0.2s ease;
+        }
+
+        .header__emblem:hover {
+            transform: scale(1.05);
+        }
+
+        .header__site-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header__full-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #d00;
+            line-height: 1.2;
+        }
+
+        .header__domain {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.2;
+        }
+
+        .header__right {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .header__lang-link {
+            color: #333;
+            text-decoration: none;
+            margin: 0 8px;
+            transition: color 0.2s ease;
+        }
+
+        .header__lang-link:hover {
+            color: #d00;
+            text-decoration: underline;
+        }
+
+        .header__divider {
+            color: #ccc;
+            margin: 0 5px;
+        }
+
+        /* 主体内容 */
+        .main {
+            padding: 30px 0;
+        }
+
+        .main__wrapper {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .main__content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .main__sidebar {
+            width: 300px;
+            flex-shrink: 0;
+        }
+
+        .section__title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+            border-left: 4px solid #d00;
+            padding-left: 8px;
+        }
+
+        .section__text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+
+        .main__flag {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.2s ease;
+        }
+
+        .main__flag:hover {
+            transform: scale(1.02);
+        }
+
+        /* 地图区域 */
+        .map-section {
+            padding: 20px 0;
+        }
+
+        .map-section__title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+            color: #333;
+        }
+
+        .map-section__wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 10px 0 30px;
+            flex-wrap: wrap;
+        }
+
+        .map-section__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 460px;
+        }
+
+        .map-section__img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .map-section__img:hover {
+            transform: scale(1.02);
+        }
+
+        .map-section__desc {
+            font-size: 20px;
+            margin-top: 8px;
+            text-align: center;
+            color: #666;
+        }
+
+        /* 法律文档区域 */
+        .legal-section {
+            padding: 20px 0;
+        }
+
+        .legal-section__title {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 8px;
+            color: #333;
+        }
+
+        /*法律图片*/
+        
+        :root{
+            --Legal-Document-Cover_width:200px
+        }
+
+        .legal-Cover-box{
+            padding: 20px 0;
+            margin-left: 100px;
+            display: flex;
+            gap: 80px;
+            align-items: flex-start;
+            flex-wrap: wrap
+        }
+
+        .legal-Cover_img{
+            width: var(--Legal-Document-Cover_width);
+            height: calc(var(--Legal-Document-Cover_width)*1.414);
+            display: block;
+            transition: transform 0.2s ease; 
+        }
+
+        .legal-Cover_img:hover{
+            transform: scale(1.02);
+        }
+
+        .peopleCongressOrganizationLawCoverls_img{
+            width: var(--Legal-Document-Cover_width);
+            height: calc(var(--Legal-Document-Cover_width)*1.414);
+            display: block;
+            transition: transform 0.2s ease;         
+        }
+
+        .peopleCongressOrganizationLawCoverls_img:hover{
+            transform: scale(1.02);
+        }
+
+        /* 分割线 */
+        .divider {
+            border: none;
+            height: 1px;
+            background-color: #ccc;
+            margin: 20px auto;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .header__full-name {
+                font-size: 18px;
+            }
+
+            .map-section__title,
+            .legal-section__title {
+                font-size: 20px;
+            }
+
+            .map-section__desc {
+                font-size: 16px;
+            }
+
+            .section__title {
+                font-size: 18px;
+            }
+
+            .section__text {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header__wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header__right {
+                margin-top: 10px;
+            }
+
+            .main__wrapper {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="container header__wrapper">
+            <!-- 左侧：国徽 + 名称 -->
+            <div class="header__left">
+                <a href="https://s41.ax1x.com/2026/02/18/pZOXeR1.png" target="_blank">
+                    <img src="https://s41.ax1x.com/2026/02/18/pZOXeR1.png" alt="中华网络共和国国徽" class="header__emblem">
+                </a>
+                <div class="header__site-info">
+                    <span class="header__full-name">中华网络共和国中央人民政府</span>
+                    <span class="header__domain">www.rocc.gov</span>
+                </div>
+            </div>
+            <!-- 右侧：语言切换 -->
+            <div class="header__right">
+                <a href="#" class="header__lang-link" data-lang="zh-CN">简体</a>
+                <a href="#" class="header__lang-link" data-lang="zh-TW">繁體</a>
+                <a href="#" class="header__lang-link" data-lang="en">EN</a>
+                <span class="header__divider">|</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 页面主体内容 -->
+    <main class="main">
+        <div class="container main__wrapper">
+            <div class="main__content">
+                <h2 class="section__title">中华共产党介绍</h2>
+                <p class="section__text">
+                    中华共产党是中华网络共和国的执政党，建立于2025年12月14日，宗旨是为人民服务。中华共产党拥有向国家提议的权力，不定期召开中华共产党全体代表大会拟定对中华网络共和国治国的建议。中华共产党的总书记的侯阔
+                </p>
+            </div>
+            <div class="main__sidebar">
+                <h3 class="section__title">党旗</h3>
+                <a href="https://s41.ax1x.com/2026/03/04/pe9sWRO.jpg" target="_blank">
+                    <img src="https://s41.ax1x.com/2026/03/04/pe9sWRO.jpg" alt="中华网络共和国国旗" class="main__flag">
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- 分割线 -->
+    <hr class="divider">
